@@ -1,0 +1,112 @@
+<style type="text/css">
+#log{
+  float: right;
+}
+  .chat_box{
+border: 1px solid black;
+width: 30%px;
+}
+
+.chat_box .body_top{
+height:200px;
+padding-left: 5px;
+height:300px;
+overflow:auto;
+}
+.chat_box .body_top .send{
+  clear:both;
+  width: 100%;
+/*background-color: rgb(178, 227, 255);*/
+}
+.chat_box .body_top .send .send_content{
+  float:left;
+  border-radius:5px;
+  padding:5px;
+  margin:2px;
+  background-color: rgb(178, 227, 255);
+}
+.chat_box .body_top .recv{
+  clear:both;
+  width: 100%;
+  /*background-color: rgb(166, 235, 153);*/
+}
+.chat_box .body_top .recv .send_content{
+  float: right;
+  border-radius:5px;
+  padding:5px;
+  margin:2px;
+  background-color: rgb(166, 235, 153);
+}
+.chat_box .body_top span{
+  float:left;
+  margin-right:20px;
+}
+.chat_box .body_bot{
+border-top:1px solid black;
+  padding: 10px;
+}
+.chat_box .body_bot .input{
+
+width:80%;
+height:50px;
+}
+
+.file-wrapper {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+.file-wrapper .button {
+  background: #79130e;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 18px;
+  text-transform: uppercase;
+  color:white;
+}
+
+.file-wrapper input {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  filter: alpha(opacity=1);
+  -moz-opacity: 0.01;
+  opacity: 0.01;
+}
+
+</style>
+<div class='container'>
+
+  <h2>{{ username }} </h2>
+  <hr />
+  <select ng-change='change()' ng-model="selected" ng-options="a.text for a in datas">
+    <option value="" selected>--Select--</option>
+  </select>
+  <button class='btn' ng-click='sendInvite()'>Invite</button>
+  <div class='chat_box'>
+    <div class='body_top' id='body_group'>
+    </div>
+    <div class='body_bot' style='margin-top:10px;'>
+      <input class='input' ng-model='msg' type='text' id='send' ng-disabled='isUser' />
+      <button class='btn'style='margin-top:-10px;' ng-click='send_sms()' id='submit_send' ng-disabled='isUser' >Send</button>
+      <span class="file-wrapper">
+        <input accept="image/*" type="file" name="photo" id="photo" image="image" />
+        <span class="button">Choose a Photo</span>
+      </span>
+    </div>
+  </div>
+
+<!-- <form action="/upload" method="post" enctype="multipart/form-data">
+  <input  accept="image/*" ng-model='image2' name="image" type='file' image="image" />
+  <button type='submit'> Submited </button>
+</form> -->
+
+<!-- <img ng-src="upload/tienngo.jpg" style="width: 48px;height:48px;" class="thumbnail"> -->

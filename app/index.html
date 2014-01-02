@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Google Phone Gallery</title>
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animations.css">
 
   <script src="lib/jquery/jquery-1.10.2.js"></script>
@@ -12,18 +12,24 @@
   <script src="lib/angular/angular-animate.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   <script src="lib/angular/angular-route.js"></script>
-
+  <script src="lib/imageupload.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
+  <script type="text/javascript" src="js/strophe.js"></script>
+  <script src="js/strophe.muc.js"></script>
 </head>
 <body>
-
-  <div class="view-container">
+  <ul>
+    <li><a href="#/chats">chat</a></li>
+    <li><a href="#/room/room1">room</a></li>
+  </ul>
+  <div class="view-container" ng-controller='rootController'>
     <div ng-view class="view-frame"></div>
   </div>
-
+  <span id="dummy"></span>
 </body>
 </html>

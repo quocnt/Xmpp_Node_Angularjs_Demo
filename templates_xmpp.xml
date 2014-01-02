@@ -1,0 +1,36 @@
+<!-- Invite join room template -->
+<body xmlns='http://jabber.org/protocol/httpbind'>
+	<message xmlns='jabber:client' from='user1@192.168.2.110/28638848701388377836325476' to='user2@192.168.2.110' id='3'>
+		<x xmlns='jabber:x:conference' jid='room1@conference.192.168.2.110' reason='Hey, do you want join my room ?'/>
+	</message>
+</body>
+<!-- Invite join room template (medited) -->
+<body xmlns='http://jabber.org/protocol/httpbind'>
+	<message xmlns='jabber:client' from='room2@conference.192.168.2.110' to='user2@192.168.2.110' type='normal'>
+		<x xmlns='http://jabber.org/protocol/muc#user'>
+			<invite from='admin@192.168.2.110/36591558261388379288282290'>
+				<reason>alo</reason>
+			</invite>
+		</x>
+		<x xmlns='jabber:x:conference' jid='room2@conference.192.168.2.110'>alo</x>
+		<body>admin@192.168.2.110/36591558261388379288282290 invites you to the room room2@conference.192.168.2.110 (alo) </body>
+	</message>
+</body>
+
+
+
+
+<!-- Send message 1 - 1 template -->
+<body xmlns='http://jabber.org/protocol/httpbind'>
+	<message xmlns='jabber:client' from='user1@192.168.2.110/28638848701388377836325476' to='user2@192.168.2.110' type='chat'>
+		<body>helo</body>
+	</message>
+</body>
+
+<!-- Receive message group chat template -->
+
+<body xmlns='http://jabber.org/protocol/httpbind'>
+	<message xmlns='jabber:client' from='room1@conference.192.168.2.110/user1' to='user2@192.168.2.110/10869766031388377916651343' type='groupchat' id='purpleed0c60f6'>
+		<body>hi , i&apos;m user 1</body>
+	</message>
+</body>

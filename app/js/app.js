@@ -5,24 +5,29 @@
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'phonecatAnimations',
-
   'phonecatControllers',
   'phonecatFilters',
-  'phonecatServices'
+  'phonecatServices',
+  'ChatXMPP',
+  'imageupload'
 ]);
 
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/chats', {
+        templateUrl: 'partials/chat.html',
+        controller: 'ChatCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/room/:roomName', {
+        templateUrl: 'partials/room.html',
+        controller: ChatRoomCtrl
+      }).
+      when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/login'
       });
   }]);

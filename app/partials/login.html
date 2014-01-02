@@ -1,0 +1,25 @@
+  <style>
+	#login{
+	background-color: #e3e3e3;
+	padding: 10px 5px 5px 5px;
+ width:300px;
+ margin: 10% auto;
+ border-radius: 5px;
+}
+
+#login label{
+ float:left;
+ width:60px;
+ line-height: 30px;
+}
+  </style>
+  {{ test }}
+  <div id='login' style='text-align: center'>
+    <form name='cred'>
+      <label for='jid'>JID:</label>
+      <input type='text' class="form-control" value='admin@192.168.2.110' ng-model='jid' id='jid' />
+      <label for='pass'>Password:</label>
+      <input type='password' class="form-control" value='123456' id='pass' ng-model='password' />
+      <input type='button' id='connect' ng-click='connect()' value= '{{button}}' />
+    </form>
+  </div>
